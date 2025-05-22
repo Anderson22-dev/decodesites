@@ -4,16 +4,20 @@ import Link from "next/link";
 const alexandria = Alexandria({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
 
+
+
+
+
 export default function Home() {
   return (
-    <div>
+    <div className={`${alexandria.className} ${figtree.className}`}>
       <section className="bg-[radial-gradient(ellipse_at_center,rgba(107,33,168,0.8)_0%,rgba(0,0,0,1)_40%,rgba(0,0,0,1)_100%)] h-[700px] flex flex-col items-center justify-center gap-16 p-20">
         <div className="text-center flex flex-col gap-12">
           <span>
-            <h1 className="font-[Alexandria] bg-clip-text text-transparent bg-gradient-to-r from-[#C27AFF] to-[#00D3F2] text-[2rem] sm:text-6xl font-bold">
+            <h1 className="font-[alexandria] bg-clip-text text-transparent bg-gradient-to-r from-[#C27AFF] to-[#00D3F2] text-[2rem] sm:text-6xl font-bold">
               Sites Profissionais
             </h1>
-            <h1 className="font-[Alexandria] text-white text-[2rem] sm:text-6xl font-bold">
+            <h1 className="font-[alexandria] text-white text-[2rem] sm:text-6xl font-bold">
               para o seu negócio
             </h1>
           </span>
@@ -28,21 +32,21 @@ export default function Home() {
           <p className="text-xl sm:text-xl font-[Figtree] text-[#A15CFF]">
             Veja nossos serviços
           </p>
-          <img src="./arrow-icon.png" className="w-6 h-6" />
+          <img src="./arrow-icon.png" className="w-6 h-6" alt="Ícone de seta" />
         </div>
       </section>
       <section className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="text-[0.75rem] font-[Alexandria] tracking-[12px] text-[#C7C7CC]">
+          <h1 className="text-[0.75rem] font-[alexandria] tracking-[12px] text-[#C7C7CC]">
             DESENVOLVIMENTO DE SITES
           </h1>
-          <h1 className="text-[2rem] font-[Alexandria] font-bold">
+          <h1 className="text-[2rem] font-[alexandria] font-bold">
             Tenha sua presença online com um site
           </h1>
         </div>
         <div className="flex flex-col sm:flex-row gap-[64px]">
           <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
-            <h1 className="font-[Alexandria] text-[1.25rem] font-bold">
+            <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Copywriting Persuasivo
             </h1>
             <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -51,7 +55,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
-            <h1 className="font-[Alexandria] text-[1.25rem] font-bold">
+            <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Sites Otimizados para SEO
             </h1>
             <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -61,7 +65,7 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
-            <h1 className="font-[Alexandria] text-[1.25rem] font-bold">
+            <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Design Estratégico
             </h1>
             <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -75,10 +79,10 @@ export default function Home() {
       <section className="bg-[url('../../public/background.png')] bg-no-repeat bg-center sm:bg-cover px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[80px]">
         <div className="flex flex-col gap-[64px]">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-[0.75rem] font-[Alexandria] tracking-[12px] text-[#C7C7CC]">
+            <h1 className="text-[0.75rem] font-[alexandria] tracking-[12px] text-[#C7C7CC]">
               ETAPAS
             </h1>
-            <h1 className="text-[2rem] font-[Alexandria] font-bold">
+            <h1 className="text-[2rem] font-[alexandria] font-bold">
               COMO FUNCIONA?
             </h1>
           </div>
@@ -90,7 +94,7 @@ export default function Home() {
               },
               {
                 img: "./file-check-icon.png",
-                title: "2. Envie textos e imagens que deseja usar no site.",
+                title: "2. Envie textos e imgns que deseja usar no site.",
               },
               {
                 img: "./deployment-icon.png",
@@ -104,10 +108,10 @@ export default function Home() {
               >
                 <img
                   src={item.img}
-                  alt=""
+                  alt={item.title}
                   className="w-[2rem] h-[2rem] md:w-[2.5rem] md:h-[2.5rem]"
                 />
-                <h1 className="font-[Alexandria] text-[1rem] md:text-[1.25rem] font-bold text-center">
+                <h1 className="font-[alexandria] text-[1rem] md:text-[1.25rem] font-bold text-center">
                   {item.title}
                 </h1>
               </div>
@@ -115,7 +119,7 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-black/50 backdrop-blur-[20px] rounded-[1.25rem] px-[40px] py-[40px] flex flex-col gap-[64px]">
-          <h1 className="text-[2rem] font-[Alexandria] font-bold">
+          <h1 className="text-[2rem] font-[alexandria] font-bold">
             SEU SITE CRIADO COM QUALIDADE E EXCELÊNCIA
           </h1>
           <div className="flex gap-[12px]">
@@ -125,7 +129,7 @@ export default function Home() {
               className="w-[2.5rem] h-[2.5rem]"
             />
             <div>
-              <h1 className="font-[Alexandria] text-[1.5rem] font-bold">
+              <h1 className="font-[alexandria] text-[1.5rem] font-bold">
                 Aumento nas Conversões
               </h1>
               <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -137,7 +141,7 @@ export default function Home() {
           <div className="flex gap-[12px]">
             <img src="./phone.png" alt="" className="w-[2.5rem] h-[2.5rem]" />
             <div>
-              <h1 className="font-[Alexandria] text-[1.5rem] font-bold">
+              <h1 className="font-[alexandria] text-[1.5rem] font-bold">
                 Sites Responsivos
               </h1>
               <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -148,7 +152,7 @@ export default function Home() {
           <div className="flex gap-[12px]">
             <img src="./code.png" alt="" className="w-[2.5rem] h-[2.5rem]" />
             <div>
-              <h1 className="font-[Alexandria] text-[1.5rem] font-bold">
+              <h1 className="font-[alexandria] text-[1.5rem] font-bold">
                 Código de Qualidade
               </h1>
               <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
@@ -161,10 +165,10 @@ export default function Home() {
       </section>
       <section className="bg-radial from-[#0E1629] from-30% to-black px-5 sm:px-20 py-20 flex flex-col gap-12">
         <div className="flex flex-col items-center justify-center text-center">
-          <h1 className="text-xs sm:text-sm font-[Alexandria] tracking-[12px] text-[#C7C7CC]">
+          <h1 className="text-xs sm:text-sm font-[alexandria] tracking-[12px] text-[#C7C7CC]">
             NOS CONTRATE
           </h1>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-[Alexandria] font-bold">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-[alexandria] font-bold">
             ESCOLHA O SERVIÇO E ENTRE EM CONTATO
           </h1>
         </div>
@@ -212,7 +216,7 @@ export default function Home() {
               key={index}
               className="flex flex-col w-full sm:w-[48%] md:w-[30%] lg:w-[22%] items-center gap-6 border-2 border-white rounded-xl px-6 py-10"
             >
-              <img src={item.img} className="w-20 h-20" />
+              <img src={item.img} className="w-20 h-20" alt={item.title} />
               <h1 className="font-[Figtree] text-[#C7C7CC] text-lg font-semibold text-center">
                 {item.title}
               </h1>
@@ -220,18 +224,18 @@ export default function Home() {
               <div className="flex flex-col items-center gap-3">
                 {item.fullPrice ? (
                   <>
-                    <p className="font-[Alexandria] text-base font-bold">
+                    <p className="font-[alexandria] text-base font-bold">
                       Em até 12x de
                     </p>
-                    <p className="font-[Alexandria] text-2xl leading-8 font-bold">
+                    <p className="font-[alexandria] text-2xl leading-8 font-bold">
                       {item.price}
                     </p>
-                    <p className="font-[Alexandria] text-base font-bold">
+                    <p className="font-[alexandria] text-base font-bold">
                       ou {item.fullPrice}
                     </p>
                   </>
                 ) : (
-                  <p className="font-[Alexandria] text-xl font-bold">
+                  <p className="font-[alexandria] text-xl font-bold">
                     {item.price}
                   </p>
                 )}
@@ -258,7 +262,7 @@ export default function Home() {
         </div>
       </section>
       <section className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]">
-        <h1 className="text-[2rem] font-[Alexandria] font-bold">
+        <h1 className="text-[2rem] font-[alexandria] font-bold">
           DÚVIDAS FREQUENTES
         </h1>
         <div className="flex flex-col gap-4">
@@ -273,7 +277,7 @@ export default function Home() {
             },            
           ].map((item, index) => (
             <div key={index} className="flex flex-col gap-4 border-2 border-white rounded-xl px-6 py-10">
-              <h1 className="font-[Alexandria] text-[1.25rem] font-bold">{item.title}</h1>
+              <h1 className="font-[alexandria] text-[1.25rem] font-bold">{item.title}</h1>
               <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">{item.desc}</p>
             </div>
           ))}

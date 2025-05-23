@@ -4,14 +4,50 @@ import Link from "next/link";
 const alexandria = Alexandria({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
 
-
-
-
-
 export default function Home() {
   return (
     <div className={`${alexandria.className} ${figtree.className}`}>
-      <section className="bg-[radial-gradient(ellipse_at_center,rgba(107,33,168,0.8)_0%,rgba(0,0,0,1)_40%,rgba(0,0,0,1)_100%)] h-[700px] flex flex-col items-center justify-center gap-16 p-20">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <span className="text-white font-bold text-xl">Decode Sites</span>
+            </div>
+            <div className="hidden md:block">
+              <div className="flex items-center space-x-8">
+                <Link
+                  href="#servicos"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Serviços
+                </Link>
+                <Link
+                  href="#como-funciona"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Como Funciona
+                </Link>
+                <Link
+                  href="#precos"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Preços
+                </Link>
+                <Link
+                  href="#faq"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  FAQ
+                </Link>
+                <button className="bg-gradient-to-r from-[#C27AFF] to-[#007DF2] text-white px-4 py-2 rounded-lg hover:scale-105 transition-all duration-300">
+                  Contato
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <section className="bg-[radial-gradient(ellipse_at_center,rgba(107,33,168,0.8)_0%,rgba(0,0,0,1)_40%,rgba(0,0,0,1)_100%)] h-[700px] flex flex-col items-center justify-center gap-16 p-20 pt-32">
         <div className="text-center flex flex-col gap-12">
           <span>
             <h1 className="font-[alexandria] bg-clip-text text-transparent bg-gradient-to-r from-[#C27AFF] to-[#00D3F2] text-[2rem] sm:text-6xl font-bold">
@@ -26,16 +62,25 @@ export default function Home() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          <button className="bg-gradient-to-r from-[#C27AFF]  to-[#007DF2] text-white font-[Figtree] font-bold text-xl px-5 py-5 rounded-xl">
-            ★ Quero um site
-          </button>
+          <Link
+            href="https://api.whatsapp.com/send?phone=5511961645108"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-gradient-to-r from-[#C27AFF]  to-[#007DF2] text-white font-[Figtree] font-bold text-xl px-5 py-5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_20px_rgba(194,122,255,0.5)]">
+              ★ Quero um site
+            </button>
+          </Link>
           <p className="text-xl sm:text-xl font-[Figtree] text-[#A15CFF]">
             Veja nossos serviços
           </p>
           <img src="./arrow-icon.png" className="w-6 h-6" alt="Ícone de seta" />
         </div>
       </section>
-      <section className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]">
+      <section
+        className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]"
+        id="servicos"
+      >
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-[0.75rem] font-[alexandria] tracking-[12px] text-[#C7C7CC]">
             DESENVOLVIMENTO DE SITES
@@ -76,7 +121,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-[url('../../public/background.png')] bg-no-repeat bg-center sm:bg-cover px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[80px]">
+      <section
+        className="bg-[url('../../public/background.png')] bg-no-repeat bg-center sm:bg-cover px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[80px]"
+        id="como-funciona"
+      >
         <div className="flex flex-col gap-[64px]">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-[0.75rem] font-[alexandria] tracking-[12px] text-[#C7C7CC]">
@@ -163,7 +211,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="bg-radial from-[#0E1629] from-30% to-black px-5 sm:px-20 py-20 flex flex-col gap-12">
+      <section
+        className="bg-radial from-[#0E1629] from-30% to-black px-5 sm:px-20 py-20 flex flex-col gap-12"
+        id="precos"
+      >
         <div className="flex flex-col items-center justify-center text-center">
           <h1 className="text-xs sm:text-sm font-[alexandria] tracking-[12px] text-[#C7C7CC]">
             NOS CONTRATE
@@ -242,43 +293,58 @@ export default function Home() {
               </div>
 
               <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" />
+                <img src="./check-circle.png" alt="" className="w-6 h-6" />
                 <p className="font-[Figtree] text-sm">{item.desc1}</p>
               </div>
               <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" />
+                <img src="./check-circle.png" alt="" className="w-6 h-6" />
                 <p className="font-[Figtree] text-sm">{item.desc2}</p>
               </div>
               <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" />
+                <img src="./check-circle.png" alt="" className="w-6 h-6" />
                 <p className="font-[Figtree] text-sm">{item.desc3}</p>
               </div>
-
-              <button className="bg-[#34C759] text-white font-[Figtree] font-bold text-lg px-4 py-3 rounded-3xl w-full">
-                Contratar Agora
-              </button>
+              <Link
+                href="https://api.whatsapp.com/send?phone=5511961645108"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="bg-[#34C759] text-white font-[Figtree] font-bold text-lg px-4 py-3 rounded-3xl w-full transition-all duration-300 hover:bg-[#2db34d] hover:shadow-[0_0_20px_rgba(52,199,89,0.5)]">
+                  Contratar Agora
+                </button>
+              </Link>
             </div>
           ))}
         </div>
       </section>
-      <section className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]">
-        <h1 className="text-[2rem] font-[alexandria] font-bold">
+      <section
+        className="bg-black px-[20px] sm:px-[80px] py-[80px] flex flex-col gap-[64px]"
+        id="faq"
+      >
+        <h1 className="text-[2rem] font-[alexandria] font-bold text-center">
           DÚVIDAS FREQUENTES
         </h1>
         <div className="flex flex-col gap-4">
           {[
             {
               title: "Como um site ajuda o meu negócio?",
-              desc: "Um site é uma ferramenta poderosa para expandir sua base de clientes. Ao disponibilizar informações sobre sua expertise, áreas de atuação e casos anteriores, você pode atrair potenciais clientes que estão buscando os produtos que você oferece. Além disso, um site que esteja posicionado entre os primeiros nos resultados do Google pode aumentar sua visibilidade online, permitindo que você seja encontrado por aqueles que precisam de seus serviços."
+              desc: "Um site é uma ferramenta poderosa para expandir sua base de clientes. Ao disponibilizar informações sobre sua expertise, áreas de atuação e casos anteriores, você pode atrair potenciais clientes que estão buscando os produtos que você oferece. Além disso, um site que esteja posicionado entre os primeiros nos resultados do Google pode aumentar sua visibilidade online, permitindo que você seja encontrado por aqueles que precisam de seus serviços.",
             },
             {
               title: "Quanto tempo leva para meu site ficar pronto?",
-              desc: "depende bastante do tipo de projeto, mas geralmente tem um prazo médio de 7 a 15 dias úteis."
-            },            
+              desc: "depende bastante do tipo de projeto, mas geralmente tem um prazo médio de 7 a 15 dias úteis.",
+            },
           ].map((item, index) => (
-            <div key={index} className="flex flex-col gap-4 border-2 border-white rounded-xl px-6 py-10">
-              <h1 className="font-[alexandria] text-[1.25rem] font-bold">{item.title}</h1>
-              <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">{item.desc}</p>
+            <div
+              key={index}
+              className="flex flex-col gap-4 border-2 border-white rounded-xl px-6 py-10"
+            >
+              <h1 className="font-[alexandria] text-[1.25rem] font-bold">
+                {item.title}
+              </h1>
+              <p className="font-[Figtree] text-[#C7C7CC] text-[1rem]">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -288,41 +354,18 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-4">
             <div>
               <div className="flex items-center gap-2">
-                             
                 <span className="text-lg font-bold">Decode Sites</span>
               </div>
               <p className="mt-4 text-sm text-gray-400">
-                Criamos sites profissionais que convertem visitantes em clientes.
+                Criamos sites profissionais que convertem visitantes em
+                clientes.
               </p>
             </div>
-            
+
             <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Empresa</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
-                <li>
-                  <p className="hover:text-white">
-                    Sobre nós
-                  </p>
-                </li>
-                <li>
-                  <p className="hover:text-white">
-                    Portfólio
-                  </p>
-                </li>
-                <li>
-                  <p className="hover:text-white">
-                    Blog
-                  </p>
-                </li>
-                <li>
-                  <p className="hover:text-white">
-                    Contato
-                  </p>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">Contato</h3>
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider">
+                Contato
+              </h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
                   <svg
@@ -361,7 +404,12 @@ export default function Home() {
                 </li>
               </ul>
               <div className="mt-4 flex gap-4">
-                <Link href="#" className="text-gray-400 hover:text-white">
+                <Link
+                  href="https://www.instagram.com/decodesites/"
+                  className="text-gray-400 hover:text-white"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <span className="sr-only">Instagram</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

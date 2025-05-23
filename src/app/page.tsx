@@ -61,7 +61,7 @@ export default function Home() {
             Somos especializados em projetar e desenvolver sites profissionais.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+        <div className="flex flex-col items-center sm:flex-row sm:items-center gap-4">
           <Link
             href="https://api.whatsapp.com/send?phone=5511961645108"
             target="_blank"

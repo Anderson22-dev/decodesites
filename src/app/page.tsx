@@ -144,7 +144,7 @@ export default function Home() {
               },
               {
                 img: "./file-check-icon.png",
-                title: "2. Envie textos e imgns que deseja usar no site.",
+                title: "2. Envie textos e imagens que deseja usar no site.",
               },
               {
                 img: "./deployment-icon.png",

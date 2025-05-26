@@ -1,5 +1,7 @@
 import { Alexandria, Figtree } from "next/font/google";
 import Link from "next/link";
+import { PlanCard } from "@/components/PlanCard";
+import { plans } from "@/data/plans";
 
 const alexandria = Alexandria({ subsets: ["latin"] });
 const figtree = Figtree({ subsets: ["latin"] });
@@ -224,96 +226,9 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="flex flex-wrap gap-6 justify-center">
-          {[
-            {
-              img: "./figma.png",
-              title: "Layout no Figma",
-              price: "R$ 34,00",
-              fullPrice: "R$ 349,00 à vista",
-              desc1: "Construção do design no Figma",
-              desc2: "Design Personalizado",
-              desc3: "100% Responsivo",
-            },
-            {
-              img: "./window.png",
-              title: "Criação de Landing Page",
-              price: "R$ 69,00",
-              fullPrice: "R$ 697,00 à vista",
-              desc1: "Design no Figma e implementação",
-              desc2: "Design Personalizado",
-              desc3: "100% Responsivo",
-            },
-            {
-              img: "./layout.png",
-              title: "Site Institucional",
-              price: "R$ 259,00",
-              fullPrice: "R$ 2597,00 à vista",
-              desc1: "Construção do design no Figma",
-              desc2: "Design Personalizado",
-              desc3: "100% Responsivo",
-            },
-            {
-              img: "./settings.png",
-              title: "Site Sob Medida",
-              price: "Sob Orçamento",
-              fullPrice: "",
-              desc1: "Construção do design no Figma",
-              desc2: "Design Personalizado",
-              desc3: "100% Responsivo",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col w-full sm:w-[48%] md:w-[30%] lg:w-[22%] items-center gap-6 border-2 border-white rounded-xl px-6 py-10"
-            >
-              <img src={item.img} className="w-20 h-20" alt={item.title} />
-              <h1 className="font-[Figtree] text-[#C7C7CC] text-lg font-semibold text-center">
-                {item.title}
-              </h1>
-
-              <div className="flex flex-col items-center gap-3">
-                {item.fullPrice ? (
-                  <>
-                    <p className="font-[alexandria] text-base font-bold">
-                      Em até 12x de
-                    </p>
-                    <p className="font-[alexandria] text-2xl leading-8 font-bold">
-                      {item.price}
-                    </p>
-                    <p className="font-[alexandria] text-base font-bold">
-                      ou {item.fullPrice}
-                    </p>
-                  </>
-                ) : (
-                  <p className="font-[alexandria] text-xl font-bold">
-                    {item.price}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" className="w-6 h-6" />
-                <p className="font-[Figtree] text-sm">{item.desc1}</p>
-              </div>
-              <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" className="w-6 h-6" />
-                <p className="font-[Figtree] text-sm">{item.desc2}</p>
-              </div>
-              <div className="flex w-full justify-start items-start gap-3">
-                <img src="./check-circle.png" alt="" className="w-6 h-6" />
-                <p className="font-[Figtree] text-sm">{item.desc3}</p>
-              </div>
-              <Link
-                href="https://api.whatsapp.com/send?phone=5511961645108"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="bg-[#34C759] text-white font-[Figtree] font-bold text-lg px-4 py-3 rounded-3xl w-full transition-all duration-300 hover:bg-[#2db34d] hover:shadow-[0_0_20px_rgba(52,199,89,0.5)]">
-                  Contratar Agora
-                </button>
-              </Link>
-            </div>
+        <div className="flex flex-wrap justify-center gap-6">
+          {plans.map((plan, index) => (
+            <PlanCard key={index} plan={plan} />
           ))}
         </div>
       </section>

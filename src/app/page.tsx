@@ -92,7 +92,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="flex flex-col sm:flex-row gap-[64px]">
-          <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
+          <div className="flex flex-col w-full gap-[24px] border-2 border-white/10 hover:border-white/50 transition-all duration-300 rounded-[1.25rem] px-[28px] py-[40px]">
             <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Copywriting Persuasivo
             </h1>
@@ -101,7 +101,7 @@ export default function Home() {
               benefícios do seu produto ou serviço e incentivando a ação.
             </p>
           </div>
-          <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
+          <div className="flex flex-col w-full gap-[24px] border-2 border-white/10 hover:border-white/50 transition-all duration-300 rounded-[1.25rem] px-[28px] py-[40px]">
             <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Sites Otimizados para SEO
             </h1>
@@ -111,7 +111,7 @@ export default function Home() {
               de busca.
             </p>
           </div>
-          <div className="flex flex-col w-full gap-[24px] border-2 border-white rounded-[1.25rem] px-[28px] py-[40px]">
+          <div className="flex flex-col w-full gap-[24px] border-2 border-white/10 hover:border-white/50 transition-all duration-300 rounded-[1.25rem] px-[28px] py-[40px]">
             <h1 className="font-[alexandria] text-[1.25rem] font-bold">
               Design Estratégico
             </h1>
@@ -154,7 +154,7 @@ export default function Home() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="flex flex-col gap-[24px] w-full items-center justify-center border-2 border-white rounded-[1.25rem] bg-black/50 backdrop-blur-[20px] px-6 py-8 md:px-9 md:py-10"
+                className="flex flex-col gap-[24px] w-full items-center justify-center border-2 border-white/10 hover:border-white/50 transition-all duration-300 rounded-[1.25rem] bg-black/50 backdrop-blur-[20px] px-6 py-8 md:px-9 md:py-10"
               >
                 <img
                   src={item.img}

@@ -252,7 +252,7 @@ export default function Home() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-col gap-4 border-2 border-white rounded-xl px-6 py-10"
+              className="flex flex-col gap-4 border-2 border-white/10 hover:border-white/50 transition-all duration-300 rounded-xl px-6 py-10"
             >
               <h1 className="font-[alexandria] text-[1.25rem] font-bold">
                 {item.title}
